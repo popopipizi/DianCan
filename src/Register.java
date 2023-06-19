@@ -1,9 +1,10 @@
-import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.JDialog;
-import java.sql.* ;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 
 public  class Register {
@@ -113,8 +114,8 @@ public  class Register {
                 	try {
                     Connection myConn = DriverManager.getConnection(url, user, password);
                     
-                    String sql= "INSERT INTO `Restaurant`.`Register`" 
-        					+"(`UserName`, `Birthday`,`CellPhone`, `Email`, `Password`,`Address`)"
+                    String sql= "INSERT INTO 'Restaurant'.'Register'" 
+        					+"('UserName', 'Birthday','CellPhone', 'Email', 'Password','Address')"
         					+"VALUES (?,?,?,?,?,?)";
                     
                     PreparedStatement myPst =myConn.prepareStatement(sql);

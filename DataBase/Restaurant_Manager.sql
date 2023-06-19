@@ -22,22 +22,24 @@
 DROP TABLE IF EXISTS 'Manager';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE 'Manager' (
-  'ManagerName' varchar(45) NOT NULL,
-  'ManagerPassword' varchar(45) NOT NULL,
-  PRIMARY KEY ('ManagerName','ManagerPassword')
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE [Manager] (
+                           [ManagerName] varchar(45) NOT NULL,
+                           [ManagerPassword] varchar(45) NOT NULL,
+                           PRIMARY KEY ([ManagerName], [ManagerPassword])
+);
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table 'Manager'
 --
 
-LOCK TABLES 'Manager' WRITE;
-/*!40000 ALTER TABLE 'Manager' DISABLE KEYS */;
-INSERT INTO 'Manager' VALUES ('Admin','Admin');
-/*!40000 ALTER TABLE 'Manager' ENABLE KEYS */;
-UNLOCK TABLES;
+BEGIN TRANSACTION;
+
+INSERT INTO [Manager] VALUES ('Admin', 'Admin');
+
+COMMIT;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

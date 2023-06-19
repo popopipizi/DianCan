@@ -113,8 +113,8 @@ public CustomerLogin() {
             	try {
                 myConn = DriverManager.getConnection(url, user, password);
                 
-                String sql= "SELECT *FROM `Restaurant`.`Register`" 
-    					+"WHERE `UserName`=? AND `Password`=?";
+                String sql= "SELECT *FROM 'Restaurant'.'Register'" 
+    					+"WHERE 'UserName'=? AND 'Password'=?";
                 
                 myPst =myConn.prepareStatement(sql);
                 myPst.setString(1,txtTypeName.getText());
@@ -125,8 +125,8 @@ public CustomerLogin() {
                 	try{
 		                Connection Conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","root");
 		                
-		                String sql1= "INSERT INTO `Restaurant`.`OrderFood`" 
-	        					+"(`UserName`)"
+		                String sql1= "INSERT INTO 'Restaurant'.'OrderFood'" 
+	        					+"('UserName')"
 	        					+"VALUES (?)";
 	                    
 	                    PreparedStatement Pst =Conn.prepareStatement(sql1);
