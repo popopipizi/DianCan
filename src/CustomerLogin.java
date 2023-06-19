@@ -1,42 +1,25 @@
 import javax.swing.*;
-import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-
 public class CustomerLogin implements ActionListener {
     private JFrame Customer;
-    private JTextField txtTypeName; 
+    private JTextField txtTypeName;
     private JPasswordField passwordFiled;
     private JDialog Dialog;
-    
-    String[] choics = { "win.wav","lost.wav" }; 
-	URL file1 = getClass().getResource(choics[0]); 
-	URL file2 = getClass().getResource(choics[1]); 
-	AudioClip soundWin = java.applet.Applet.newAudioClip(file1);
-	AudioClip soundLost = java.applet.Applet.newAudioClip(file2);
-	public void winVoice(){
-		   soundWin.play();
-	  }
-	public void lostVoice(){
-		   soundLost.play();
-	  }
-	
+
     public void setVisible(boolean visible) {
         if (Customer != null) {
-        	Customer.setVisible(visible);
+            Customer.setVisible(visible);
         }
     }
-    
 
-
-public CustomerLogin() {
+    public CustomerLogin() {
         initialize();
     }
 
@@ -81,15 +64,13 @@ public CustomerLogin() {
 
         JButton btnSignUp = new JButton("Sign Up");
         btnSignUp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Customer.dispose();
-	            new Register().setVisible(true);
-			}
-		});
+            public void actionPerformed(ActionEvent e) {
+                Customer.dispose();
+                new Register().setVisible(true);
+            }
+        });
         btnSignUp.setBounds(260, 186, 117, 29);
         Customer.getContentPane().add(btnSignUp);
-        
-        
 
         JLabel lblLobby = new JLabel("lobby");
         lblLobby.setIcon(new ImageIcon("src/Pictures/lobby.jpg"));
@@ -99,33 +80,33 @@ public CustomerLogin() {
     }
 
     public void actionPerformed(ActionEvent e){
-        
+
         Connection myConn=null;
-    	PreparedStatement myPst=null;
-    	ResultSet myRs=null;
-    	
-    	String url="jdbc:mysql://localhost:3306/Restaurant";
-		String user="root";
-		String password="root";
-		String cmd=e.getActionCommand();
+        PreparedStatement myPst=null;
+        ResultSet myRs=null;
+
+        String url="jdbc:mysql://localhost:3306/Restaurant";
+        String user="root";
+        String password="root";
+        String cmd=e.getActionCommand();
         if(cmd.equals("Login")) {
-        	
-            	try {
+
+            try {
                 myConn = DriverManager.getConnection(url, user, password);
-                
-                String sql= "SELECT *FROM 'Restaurant'.'Register'" 
-    					+"WHERE 'UserName'=? AND 'Password'=?";
-                
+
+                String sql= "SELECT *FROM 'Restaurant'.'Register'"
+                        +"WHERE 'UserName'=? AND 'Password'=?";
+
                 myPst =myConn.prepareStatement(sql);
                 myPst.setString(1,txtTypeName.getText());
                 myPst.setString(2,passwordFiled.getText());
                 myRs=myPst.executeQuery();
-               
+
                 if(myRs.next()){
-                	try{
-		                Connection Conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","root");
-		                
-		                String sql1= "INSERT INTO 'Restaurant'.'OrderFood'" 
+                    try{
+                        Connection Conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","root");
+
+                        String sql1= "INSERT INTO 'Restaurant'.'OrderFood'"
 	        					+"('UserName')"
 	        					+"VALUES (?)";
 	                    
@@ -137,7 +118,6 @@ public CustomerLogin() {
                 	}catch(Exception ex){
 		                ex.printStackTrace();
 		            }
-                	winVoice();
                 	JOptionPane.showMessageDialog(Dialog, "Welcome Back!", "",JOptionPane.INFORMATION_MESSAGE);
                 	Customer.dispose();
                     new FoodMenu().setVisible(true);
@@ -146,7 +126,6 @@ public CustomerLogin() {
                     
                 }
                 else{
-                	lostVoice();
                 	JOptionPane.showMessageDialog(Dialog, "The User Name or Password is incorrect. Please try again.", "",JOptionPane.WARNING_MESSAGE);
                 }
                

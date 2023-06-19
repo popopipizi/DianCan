@@ -1,31 +1,15 @@
-import java.awt.Checkbox;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Image;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
-import javax.swing.JDialog;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.net.URL;
-import java.awt.event.ActionEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.sound.sampled.AudioInputStream;
-import java.applet.AudioClip;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 public class FoodMenu implements ItemListener {
 
@@ -96,12 +80,8 @@ public class FoodMenu implements ItemListener {
 	int PreQtyWN = 1;
 	
 	 String[] choics = { "SoftMusic.wav" }; 
-		URL file1 = getClass().getResource(choics[0]); 
-		AudioClip SoftMusic = java.applet.Applet.newAudioClip(file1);
-		
-		public void SoftMusic(){
-			   SoftMusic.play();
-		  }
+		URL file1 = getClass().getResource(choics[0]);
+
 	
 	public void setVisible(boolean visible) {
         if (FoodMenu != null) {
@@ -131,7 +111,6 @@ public class FoodMenu implements ItemListener {
 			public void actionPerformed(ActionEvent e) {
 				FoodMenu.dispose();
 				new StartPage().setVisible(true);
-			    SoftMusic.stop();
 			}
 		});
 		btnReturn.setBounds(0, 0, 117, 29);
@@ -164,15 +143,6 @@ public class FoodMenu implements ItemListener {
 		});
 		btnDeposit.setBounds(139, 0, 117, 29);
 		FoodMenu.getContentPane().add(btnDeposit);
-		
-		JButton btnMusic = new JButton("Music");
-		btnMusic.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				SoftMusic();
-			}
-		});
-		btnMusic.setBounds(286, 0, 117, 29);
-		FoodMenu.getContentPane().add(btnMusic);
 		
 		JButton btnPayBalance = new JButton("Pay Balance");
 		btnPayBalance.addActionListener(new ActionListener() {
