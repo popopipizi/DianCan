@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jxbrowserdemo.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/rs2xml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jxbrowser-6.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/license.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.41-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
