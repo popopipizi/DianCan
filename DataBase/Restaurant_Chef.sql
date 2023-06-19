@@ -19,18 +19,18 @@
 -- Table structure for table `Chef`
 --
 
-DROP TABLE IF EXISTS `Chef`;
+DROP TABLE IF EXISTS 'Chef';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Chef` (
-  `ChefID` int(11) NOT NULL,
-  `ChefName` varchar(45) NOT NULL,
-  `Gender` varchar(45) DEFAULT NULL,
-  `Birthday` date DEFAULT NULL,
-  `CellPhone` varchar(45) DEFAULT NULL,
-  `Promote` int(11) DEFAULT NULL,
-  `Demote` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ChefID`)
+CREATE TABLE 'Chef' (
+  'ChefID' int(11) NOT NULL,
+  'ChefName' varchar(45) NOT NULL,
+  'Gender' varchar(45) DEFAULT NULL,
+  'Birthday' date DEFAULT NULL,
+  'CellPhone' varchar(45) DEFAULT NULL,
+  'Promote' int(11) DEFAULT NULL,
+  'Demote' int(11) DEFAULT NULL,
+  PRIMARY KEY ('ChefID')
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,9 +38,9 @@ CREATE TABLE `Chef` (
 -- Dumping data for table `Chef`
 --
 
-LOCK TABLES `Chef` WRITE;
+LOCK TABLES 'Chef' WRITE;
 /*!40000 ALTER TABLE `Chef` DISABLE KEYS */;
-INSERT INTO `Chef` VALUES (1,'Michael','Male','1990-09-26','7185031233',0,0),(2,'David','Male','1989-02-12','7183452657',1,0),(3,'Ben','Male','1994-08-20','9170982345',0,2),(4,'Jane','Female','1991-10-21','9172371276',0,0);
+INSERT INTO 'Chef' VALUES (1,'Michael','Male','1990-09-26','7185031233',0,0),(2,'David','Male','1989-02-12','7183452657',1,0),(3,'Ben','Male','1994-08-20','9170982345',0,2),(4,'Jane','Female','1991-10-21','9172371276',0,0);
 /*!40000 ALTER TABLE `Chef` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

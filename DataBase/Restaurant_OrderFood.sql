@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `OrderFood`
+-- Table structure for table 'OrderFood'
 --
 
-DROP TABLE IF EXISTS `OrderFood`;
+DROP TABLE IF EXISTS 'OrderFood';
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `OrderFood` (
-  `UserName` varchar(45) NOT NULL,
-  `Order` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`UserName`)
+CREATE TABLE 'OrderFood' (
+  'UserName' varchar(45) NOT NULL,
+  'Order' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('UserName')
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `OrderFood`
+-- Dumping data for table 'OrderFood'
 --
 
-LOCK TABLES `OrderFood` WRITE;
-/*!40000 ALTER TABLE `OrderFood` DISABLE KEYS */;
-INSERT INTO `OrderFood` VALUES ('Huang','   Sushi(3) Peking Duck(2)   Steamed Flounder(2) Salt Baked Squid(5)      Wonton Noodle(1)'),('zheng','Sweet Sour Pork(2) Ma Po Tofu(1) Sashimi(3)     Naengmyeon(3)      Japanese Ramen(5)  ');
-/*!40000 ALTER TABLE `OrderFood` ENABLE KEYS */;
+LOCK TABLES 'OrderFood' WRITE;
+/*!40000 ALTER TABLE 'OrderFood' DISABLE KEYS */;
+INSERT INTO 'OrderFood' VALUES ('Huang','   Sushi(3) Peking Duck(2)   Steamed Flounder(2) Salt Baked Squid(5)      Wonton Noodle(1)'),('zheng','Sweet Sour Pork(2) Ma Po Tofu(1) Sashimi(3)     Naengmyeon(3)      Japanese Ramen(5)  ');
+/*!40000 ALTER TABLE 'OrderFood' ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
